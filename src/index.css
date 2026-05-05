@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-p: #34C759;
+  --color-np: #007AFF;
+  --color-npc: #FF9500;
+  --color-nph: #FF3B30;
+}

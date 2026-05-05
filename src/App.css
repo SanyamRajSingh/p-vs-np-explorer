@@ -1,0 +1,103 @@
+/* Global Overrides */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: #000; overflow-x: hidden; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #34C759, #007AFF, #FF9500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+/* Glow effects per class */
+.glow-p    { box-shadow: 0 0 40px rgba(52,199,89,0.15); }
+.glow-np   { box-shadow: 0 0 40px rgba(0,122,255,0.15); }
+.glow-npc  { box-shadow: 0 0 40px rgba(255,149,0,0.15); }
+.glow-nph  { box-shadow: 0 0 40px rgba(255,59,48,0.15); }
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.6; }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* Scanning bar for verification animation */
+@keyframes scan {
+  0%   { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* Tracing border */
+@keyframes trace {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.trace-border {
+  border: 1px solid transparent;
+  background: linear-gradient(#0A0A0A, #0A0A0A) padding-box,
+              linear-gradient(135deg, #34C759, #007AFF, #FF9500, #FF3B30) border-box;
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, #34C759, transparent);
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
+
+/* SVG hover transitions */
+.venn-region { transition: opacity 0.3s ease, filter 0.3s ease; cursor: pointer; }
+.venn-region:hover { filter: brightness(1.6); }
+
+/* Sudoku cell */
+.sudoku-cell {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Path animation in TSP */
+@keyframes drawPath {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+.tsp-path {
+  stroke-dasharray: 1000;
+  animation: drawPath 0.5s ease forwards;
+}
+
+/* Responsive helpers */
+@media (max-width: 768px) {
+  .sudoku-cell { width: 28px; height: 28px; font-size: 11px; }
+}
